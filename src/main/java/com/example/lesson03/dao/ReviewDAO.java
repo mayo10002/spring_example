@@ -17,4 +17,11 @@ public interface ReviewDAO {
 			@Param("userName") String userName, 
 			@Param("point") double point, 
 			@Param("review") String review);
+	
+	public int updateReviewById(
+			@Param("id")int id,
+	   @Param("String")String review);
+
+
+	
 }
