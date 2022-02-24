@@ -4,7 +4,7 @@
  
  <mapper  namespace="com.example.lesson04.dao.UserDAO">
  	<insert id="InsertNewUserAsField" parameterType="map">
- 	  INSERT INTO `new_review`
+ 	  INSERT INTO `new_user`
     (
         `name`
         , `yyyymmdd`
@@ -23,4 +23,19 @@
         , NOW()
     )
  	</insert>
+ 	
+ 	<select id="selectLastNewUser" resultType="com.example.lesson04.model.NewUser">
+		SELECT 
+			`id`
+			, `name`
+			, `yyyymmdd`
+			, `introduce`
+			, `email`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`new_user`
+		ORDER BY `id` DESC
+		LIMIT 1
+	</select>
  </mapper>
