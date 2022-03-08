@@ -17,4 +17,5 @@ public interface UserDAO {
 
 	public User selectLastUser();
 	
+	public boolean existUserByName(String name);
 }
